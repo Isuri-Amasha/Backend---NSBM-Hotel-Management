@@ -20,15 +20,12 @@ connection.once('open', () => {
 })
 
 
-
-const feedbackRouter = require('./routes/feedback');
 const weddingHallRouter = require('./routes/weddingHall');
 const eventRouter = require('./routes/events');
 const roomRouter = require('./routes/room');
 const bookingRouter = require('./routes/booking');
 const UserRouter = require('./routes/user');
 
-app.use('/feedback', feedbackRouter);
 app.use('/weddingHall', weddingHallRouter);
 app.use('/event', eventRouter);
 app.use('/room', roomRouter);

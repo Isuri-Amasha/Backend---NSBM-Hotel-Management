@@ -7,10 +7,13 @@ const bookingSchema = new Schema({
     hotelName : {type : String,required : true},
     roomName : {type : String,required : true},
     userName : {type : String,required : true},
-    numofPeople: {type :String, required : true},
-    numofStays: {type :String, required : true},
     numofRooms: {type :String, required : true},
+    checkinDate: {type :String, required : true},
+    checkoutDate: {type :String, required : true},
     price: {type :String},
+    paymentStatus: {type :String},
+    bankName: {type :String},
+    accName: {type :String},
      
 },{
         timestamps : true,

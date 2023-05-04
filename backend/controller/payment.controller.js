@@ -1,46 +1,34 @@
-const Booking = require("../models/booking.model");
+const Payment = require("../models/payment.model");
 
-const addBooking = async (req, res) => {
-    const { hotelName,roomName,userName,numofRooms,checkinDate,checkoutDate,price,paymentStatus,bankName,accName} =
+const addPayment = async (req, res) => {
+    const { bookingId,price,bankName,accName} =
       req.body;
   
     const newbooking = new Booking({
-        hotelName,
-        roomName,
-        userName,
-        numofRooms,
-        checkinDate,
-        checkoutDate,
-        price,
-        paymentStatus,
-        bankName,
-        accName
-
+        bookingId,price,bankName,accName
     });
   
     await newbooking
       .save()
-      .then(() => res.json(newbooking._id))
+      .then(() => res.json('Payment Details added!'))
       .catch((error) => res.status(400).json("Error: " + error));
   };
 
-  const addPaymentStatus = async (req, res) => {
-    Booking.findByIdAndUpdate(req.params.id)
-      .then((existingBooking) => {
-        existingBooking.paymentStatus = req.body.paymentStatus;
-        existingBooking.accName = req.body.accName;
-        existingBooking.bankName = req.body.bankName;
+//   const addPaymentStatus = async (req, res) => {
+//     Booking.findByIdAndUpdate(req.params.id)
+//       .then((existingBooking) => {
+//         existingBooking.paymentStatus = req.body.paymentStatus;
       
        
 
         
-        existingBooking
-          .save()
-          .then(() => res.json('Payment Details updated!'))
-          .catch((error) => res.status(400).json("Error: " + error));
-      })
-      .catch((error) => res.status(400).json("Error: " + error));
-  };
+//         existingBooking
+//           .save()
+//           .then(() => res.json('Payment Details updated!'))
+//           .catch((error) => res.status(400).json("Error: " + error));
+//       })
+//       .catch((error) => res.status(400).json("Error: " + error));
+//   };
 
   const getBookings = async (req, res) => {
     try {

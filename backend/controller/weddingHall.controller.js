@@ -1,12 +1,13 @@
 const Wedding = require("../models/weddingHall.model");
 
 const addWedding = async (req, res) => {
-    const { hotelName,hallName,description,capacity,length,width,price} =
+    const { hotelName,hallName,imageURL,description,capacity,length,width,price} =
       req.body;
   
     const newwedding = new Wedding({
         hotelName,
         hallName,
+        imageURL,
         description,
         capacity,
         length,
@@ -43,6 +44,7 @@ const addWedding = async (req, res) => {
       .then((existingWedding) => {
         existingWedding.hotelName = req.body.hotelName;
         existingWedding.hallName = req.body.hallName;
+        existingWedding.imageURL = req.body.imageURL;
         existingWedding.description = req.body.description;
         existingWedding.capacity = req.body.capacity;
         existingWedding.length = req.body.length;

@@ -67,6 +67,7 @@ const addRoom = async (req, res) => {
         existingRoom.feature8 = req.body.feature8;
         existingRoom.feature9 = req.body.feature9;
         existingRoom.feature10 = req.body.feature10;
+        existingRoom.price = req.body.price;
 
         
         existingRoom
