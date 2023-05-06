@@ -8,7 +8,7 @@ const {
     updateEvent,
     getEventById,
     deleteEvent
-   
+
   } = require("../controller/events.controller");
 
   router.post("/", addEvent);

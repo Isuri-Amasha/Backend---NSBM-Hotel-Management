@@ -9,7 +9,7 @@ const {
     getBookingById,
     deleteBooking,
     addPaymentStatus
-   
+
   } = require("../controller/booking.controller");
 
   router.post("/", addBooking);
