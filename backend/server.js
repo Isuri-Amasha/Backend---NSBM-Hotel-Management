@@ -26,11 +26,13 @@ const roomRouter = require('./routes/room');
 const bookingRouter = require('./routes/booking');
 const UserRouter = require('./routes/user');
 
+
 app.use('/weddingHall', weddingHallRouter);
 app.use('/event', eventRouter);
 app.use('/room', roomRouter);
 app.use('/booking', bookingRouter);
 app.use('/user', UserRouter);
+
 
 app.listen(port, () => {
     console.log(`Server is running on port:-${port}`);

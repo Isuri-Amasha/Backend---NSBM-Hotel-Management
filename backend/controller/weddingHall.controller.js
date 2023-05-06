@@ -68,6 +68,8 @@ const addWedding = async (req, res) => {
   };
 
   
+
+  
   module.exports = {
     addWedding,
     getWeddings,
